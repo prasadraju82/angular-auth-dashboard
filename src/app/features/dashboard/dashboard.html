@@ -1,0 +1,20 @@
+<h1>Dash Board</h1>
+
+<div class="cards">
+    <div class="card" *ngFor="let stat of stats">
+        <h3>{{ stat.label}}</h3>
+        <p>{{ stat.value}}</p>
+    </div>
+</div>
+
+<table>
+    <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>
+            <span *ngIf="user.active; else inactive">
+                Active
+            </span>
+            <ng-template #inactive>Inactive</ng-template>
+        </td>
+    </tr>
+</table>
